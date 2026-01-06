@@ -1,0 +1,598 @@
+
+body {
+    background-color: rgb(17, 17, 17);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+    color: rgb(175, 224, 254);
+    font-size: 2em;
+    text-decoration: none;
+    padding-bottom: 100px;
+}
+
+.spacing {
+    width: 50px;
+}
+
+.overunderlineNoAnimation {
+    font-size: 3.3em;
+    margin-bottom: 1em;
+    position: relative;
+    display: inline-block;
+}
+
+.header {
+    height : 40px;
+    background-color: rgb(175, 224, 254);
+    text-align: center;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.map {
+    width: 60%;
+    height: 500px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+}
+
+.navbar {
+    border-radius: .5em;
+    height: 100px;
+    width: auto;
+    padding: 1em;
+    margin-bottom: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: showup 7s forwards;
+}
+
+.blue-button {
+    margin: 35px 1px 30px; /* spacing between links */
+    padding: 10px 20px;
+    font-size: 20px;
+    width: auto;
+    height: 60px;
+    border: none;
+    border-width: .5px;
+    outline: none;
+    color: #111;
+    background: rgb(175, 224, 254);
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.blackSect {
+    background-color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 2em;
+    margin-bottom: 2em;
+    align-items: center;
+}
+
+.blackSect h1 {
+    margin-top: 60px;
+    margin-bottom: 40px;
+    width: 100%;
+    font-size: 3.5em;
+    color: #fffceb;
+}
+
+.lightSect {
+    background-color: #fffceb;
+    text-align: center;
+    padding: 5em;
+    margin-bottom: 2em;
+    align-items: center;
+}
+
+.lightSect h1 {
+    margin-top: 60px;
+    margin-bottom: 40px;
+    padding-bottom: 100px;
+    width: 100%;
+    font-size: 3.5em;
+    color: rgb(0, 0, 0);
+}
+
+/* Offer Bar Stuff */
+.offerItem {
+    background-color: rgb(59, 59, 59);
+    width: 320px;
+    height: auto;
+    padding: 10px 20px;
+    margin: 40px;
+    border-radius: 1em;
+}
+
+.offerItem h1 {
+    font-size: 2em;
+    margin-top: 10px;
+    color: #fffceb;
+    font-weight: bold;
+}
+
+.offerItem p {
+    font-size: 1.2em;
+    line-height: 1.5em;
+    text-align: left;
+    color: #fffceb;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.offerBar{
+    background-color: transparent;
+    text-align: center;
+    margin-bottom: 2em;
+    margin-top:-100px;
+    padding-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.offerItem:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s;
+}
+
+.offerItem:before {
+    content: '';
+    background: linear-gradient(45deg, rgb(175, 224, 254), rgb(102, 212, 255), rgb(175, 224, 254), rgb(102, 212, 255), rgb(175, 224, 254));
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.offerItem:active {
+    color: #000
+}
+
+.offerItem:active:after {
+    background: transparent;
+}
+
+.offerItem:hover:before {
+    opacity: 1;
+}
+
+.offerItem:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+/*--------------------------------------------------*/
+
+
+/* Card Left Stuff */
+.cardLeft {
+    background-color: transparent;
+    padding: 1em;
+    margin: auto;
+    width: 80%;
+    height: auto;
+    display: flex;
+}
+
+.cardLeft .cardTextArea {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.cardLeft h1 {
+    font-size: 3.3em;
+    color: #fffceb;
+    margin-bottom: 1em;
+    text-align: left;
+}
+
+.cardLeft p {
+    font-size: 1.2em;
+    line-height: 1.5em;
+    text-align: left;
+    color: #fffceb;
+    width: 90%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.cardLeft img {
+    height: auto;
+    width: 45%;
+    border-radius: 10px;
+}
+
+.cardLeft .blue-button {
+    align-self: flex-start;
+    margin-top: 30px;
+    width: 250px;
+    height: 75px;
+}
+/*--------------------------------------------------*/
+
+
+/* Card Right Stuff */
+.cardRight {
+    background-color: transparent;
+    padding: 1em;
+    margin: auto;
+    margin-top: 5em;
+    width: 80%;
+    height: auto;
+    display: flex;
+    margin-bottom: -100px;
+}
+
+.cardRight .cardTextArea {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin-left: auto; /* pushes text area to the right edge */
+}
+
+.cardRight h1 {
+    font-size: 3.3em;
+    color: #fffceb;
+    margin-bottom: 1em;
+    text-align: right;
+}
+
+.cardRight p {
+    font-size: 1.2em;
+    line-height: 1.5em;
+    text-align: left;
+    color: #fffceb;
+    width: 90%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.cardRight img {
+    height: auto;
+    width: 50%;
+    margin-right: 2em;
+    border-radius: 10px;
+    margin-bottom: 100px;
+}
+
+.cardRight .blue-button {
+    align-self: flex-start; /* aligns button with right-aligned text */
+    margin-top: 30px;
+    width: 250px;
+    height: 75px;
+}
+
+/*--------------------------------------------------*/
+
+/* Home Banner Stuff */
+.homeBanner {
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('images/bannerImg.png');
+    background-size: cover;      /* fill the banner */
+    background-position: center; /* center the image */
+    background-repeat: no-repeat;
+    text-align: center;
+    background-size: cover;
+    height: 720px;
+    width: 100%;
+    margin-bottom: 2em;
+    display: grid;
+}
+
+
+.homeBanner h1 {
+    font-size: 4em;
+    font-weight: .1px;
+    font-size: 76px;
+    margin: auto;
+    width: 1000px;
+    color: rgb(175, 224, 254);
+    margin-top: -50px;
+}
+
+.homeBanner p {
+    margin: auto;
+    width: 900px;
+    font-size: 1.7em;
+    color: #fffceb;
+}
+/*--------------------------------------------------*/
+
+
+/* On-Page Button Effect */
+.glowing-button {
+    margin: 35px 1px 30px; /* spacing between links */
+    padding: 10px 20px;
+    font-size: 20px;
+    width: auto;
+    height: auto;
+    border: none;
+    border-width: .5px;
+    outline: none;
+    color: #111;
+    background: #fff;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glowing-button:before {
+    content: '';
+    background: linear-gradient(45deg, rgb(175, 224, 254), rgb(102, 212, 255), rgb(175, 224, 254), rgb(102, 212, 255), rgb(175, 224, 254));
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+    opacity: 1;
+}
+/*--------------------------------------------------*/
+
+
+/* Button Glow Effect */
+.glow-on-hover {
+    margin: 35px 1px 30px; /* spacing between links */
+    padding: 10px 20px;
+    font-size: 20px;
+    width: auto;
+    height: auto;
+    border: none;
+    border-width: .5px;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover img {
+    height: 60px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, rgb(175, 224, 254), rgb(102, 212, 255), rgb(175, 224, 254), rgb(102, 212, 255), rgb(175, 224, 254));
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+/*--------------------------------------------------*/
+
+
+/*Text Animation*/
+.animdiv {
+    display:inline-block;
+    overflow:hidden;
+    white-space:nowrap;
+}
+
+.animdiv:first-of-type {
+    animation: showup 7s forwards;
+}
+
+.animdiv:last-of-type {
+    width: 0px;
+    animation: reveal 7s forwards;
+}
+
+div:last-of-type span {
+    color: rgb(175, 224, 254);
+    font-size: 2em;
+    text-decoration: none;
+    padding-bottom: 100px;
+    animation: slidein 7s forwards;
+}
+
+@keyframes showup {
+    0% {opacity:0;}
+    20% {opacity:1;}
+    80% {opacity:1;}
+    100% {opacity:1;}
+}
+
+@keyframes slidein {
+    0% { margin-left:-800px; }
+    20% { margin-left:-800px; }
+    35% { margin-left:-145px; }
+    100% { margin-left:-145px; }
+}
+
+@keyframes reveal {
+    0% {opacity:0;width:0px;}
+    20% {opacity:1;width:0px;}
+    30% {width:355px;}
+    80% {opacity:1;}
+    100% {opacity:1;width:355px;}
+}
+
+
+p {
+    font-size:12px;
+    color:#999;
+    margin-top:200px;
+}
+/*--------------------------------------------------*/
+
+
+/* OverUnderline Text */
+.overunderline {
+    font-size: 3.3em;
+    color: #fffceb;
+    margin-bottom: 1em;
+    text-align: left;
+    position: relative;
+    display: inline-block;
+}
+
+.overunderline::after,
+.overunderline::before {
+    content: '';
+    position: absolute;
+    width: 95%;
+    height: 2px;
+    background: linear-gradient(to right, rgb(175, 224, 254), rgb(102, 212, 255));
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 3s ease-out;
+    transition-delay: .5s;
+}
+
+.overunderline::after {
+    bottom: -5px;
+    transform-origin: right;
+}
+
+.overunderline::before {
+    top: -5px;
+    transform-origin: left;
+}
+
+.overunderline.is-visible::after,
+.overunderline.is-visible::before {
+    transform: scaleX(1);
+}
+/*--------------------------------------------------*/
+
+/*Glowing Outline*/
+.block {
+    margin: 35px 1px 30px;
+    padding: 10px 20px;
+    font-size: 20px;
+    width: auto;
+    height: auto;
+    border: none;
+    border-width: .5px;
+    outline: none;
+    color: #111;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.block:before {
+    content: '';
+	background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, 
+		#0000ff, #00ff00,#ffff00, #ff0000);    
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: steam 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+    opacity: 1;
+}
+
+@keyframes steam {
+	0% {
+		background-position: 0 0;
+	}
+	50% {
+		background-position: 400% 0;
+	}
+	100% {
+		background-position: 0 0;
+	}
+}
+
+.block:after {
+	filter: blur(50px);
+}
+/*--------------------------------------------------*/
+
+.fadeIn {
+    opacity: 0;
+}
+
+.fadeIn.is-visible {
+    animation: fadeInAnimation 3s ease forwards;
+    animation-delay: 1s;
+}
+
+@keyframes fadeInAnimation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
