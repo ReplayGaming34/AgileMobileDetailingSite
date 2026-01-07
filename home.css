@@ -11,6 +11,15 @@ a {
     padding-bottom: 100px;
 }
 
+p {
+    font-size: 2em;
+    line-height: 1.5em;
+    text-align: left;
+    color: #fffceb;
+    width: 80%;
+    margin: 10px auto 10px auto;
+}
+
 .spacing {
     width: 50px;
 }
@@ -33,10 +42,24 @@ a {
 }
 
 .map {
-    width: 60%;
-    height: 500px;
-    margin-bottom: 40px;
+    width: 50%;
+    height: 600px;
     border-radius: 8px;
+}
+
+.mapSect {
+    display: flex;
+    justify-content: center;
+}
+
+.mapTextArea {
+    background-color: rgb(59, 59, 59);
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 600px;
+    margin-left: auto; /* pushes text area to the right edge */
+    border-radius: .5em;
 }
 
 .navbar {
@@ -100,6 +123,114 @@ a {
     font-size: 3.5em;
     color: rgb(0, 0, 0);
 }
+
+.lightSect p {
+    font-size: 1.7em;
+    line-height: 1.5em;
+    text-align: left;
+    color: rgb(0, 0, 0);
+    width: 85%;
+    margin: -100px auto 10px auto;
+}
+
+/* Dropdown Stuff */
+.dropdownArea {
+    background: rgb(175, 224, 254);
+    color: #fffceb;
+    width: 85%;
+    height: auto;
+    margin: 0px auto 20px auto;
+    border-radius: .5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8em 5em 8em 5em;
+}
+
+:root{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*{
+    text-decoration: none;
+    color:white;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.accordianBody{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #555;
+    overflow: hidden;
+}
+
+.menu{
+    width: 90%;
+    height: auto;
+    background: transparent;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.menu .btn{
+    display:block;
+    padding: 1rem;
+    border-bottom: solid 1px #1b1b2f;
+    border-top: solid 1px #1f4068;
+    position: relative;
+    color: #fffceb;
+    text-align: left;
+}
+
+.menu .submenu {
+    background: rgb(59, 59, 59);
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .8s ease-out;
+}
+
+.menu .submenu a{
+    display:block;
+    padding: 1rem;
+    position: relative;
+    color: #fffceb;
+    text-align: left;
+    font-size: 1rem;
+}
+
+.menu .submenu a::before{
+    content:'';
+    display:block;
+    position: absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 5px;
+    background: #fffceb;
+    opacity: 0;
+}
+
+.menu .submenu a:hover{
+    padding-left: calc(1rem + 5px);
+}
+
+.menu .submenu a:hover::before{
+    opacity: 1;
+}
+
+.item:target .submenu{
+    max-height: 20rem;
+}
+/*--------------------------------------------------*/
 
 /* Offer Bar Stuff */
 .offerItem {
@@ -288,8 +419,8 @@ a {
 
 /*--------------------------------------------------*/
 
-/* Home Banner Stuff */
-.homeBanner {
+/* ImageSect Stuff */
+.imageSect {
     background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('images/bannerImg.png');
     background-size: cover;      /* fill the banner */
     background-position: center; /* center the image */
@@ -303,7 +434,7 @@ a {
 }
 
 
-.homeBanner h1 {
+.imageSect h1 {
     font-size: 4em;
     font-weight: .1px;
     font-size: 76px;
@@ -313,7 +444,7 @@ a {
     margin-top: -50px;
 }
 
-.homeBanner p {
+.imageSect p {
     margin: auto;
     width: 900px;
     font-size: 1.7em;
