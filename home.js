@@ -19,21 +19,34 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// Must be global (NOT inside DOMContentLoaded)
 function initGoogleMap() {
-    const location = { lat: 40.23824376520867, lng: -76.96432439540757 };
+    // Location 1: Mechanicsburg
+    const location1 = { lat: 40.23824376520867, lng: -76.96432439540757 };
+    
+    // Location 2: Philadelphia (as an example)
+    const location2 = { lat: 39.952583, lng: -75.165222 };
 
-    const map = new google.maps.Map(
-    document.getElementById("googleMap"),
-    {
+    // --- Initialize Map 1 ---
+    const map1 = new google.maps.Map(document.getElementById("googleMap"), {
         zoom: 12,
-        center: location,
-    }
-    );
+        center: location1,
+    });
 
     new google.maps.Marker({
-    position: location,
-    map,
-    title: "Philadelphia",
+        position: location1,
+        map: map1,
+        title: "Mechanicsburg Shop",
+    });
+
+    // --- Initialize Map 2 ---
+    const map2 = new google.maps.Map(document.getElementById("googleMap2"), {
+        zoom: 12,
+        center: location2,
+    });
+
+    new google.maps.Marker({
+        position: location2,
+        map: map2,
+        title: "Philadelphia Service Area",
     });
 }
