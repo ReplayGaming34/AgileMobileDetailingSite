@@ -218,7 +218,7 @@ p {
     color: rgb(76, 155, 88);
     font-size: 1.2em;
     text-align: left;
-    margin-top: 10px;
+    margin-top: -10px;
     margin-left: 0px;
 }
 /*--------------------------------------------------*/

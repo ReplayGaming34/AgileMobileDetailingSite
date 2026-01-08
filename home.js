@@ -22,6 +22,9 @@ document.addEventListener("DOMContentLoaded", () => {
 function initGoogleMap() {
     // Location 1: Mechanicsburg
     const location1 = { lat: 40.23824376520867, lng: -76.96432439540757 };
+    
+    // Location 2: Philadelphia (as an example)
+    const location2 = { lat: 39.952583, lng: -75.165222 };
 
     // --- Initialize Map 1 ---
     const map1 = new google.maps.Map(document.getElementById("googleMap"), {
@@ -38,11 +41,11 @@ function initGoogleMap() {
     // --- Initialize Map 2 ---
     const map2 = new google.maps.Map(document.getElementById("googleMap2"), {
         zoom: 12,
-        center: location1,
+        center: location2,
     });
 
     new google.maps.Marker({
-        position: location1,
+        position: location2,
         map: map2,
         title: "Philadelphia Service Area",
     });
