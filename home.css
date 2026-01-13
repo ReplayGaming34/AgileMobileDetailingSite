@@ -1,5 +1,6 @@
 
 body {
+    width: 100%;
     background-color: rgb(17, 17, 17);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -51,9 +52,11 @@ p {
     display: flex;
     flex-direction: column;
     width: 40%;
-    height: 600px;
-    margin-left: auto; /* pushes text area to the right edge */
+    height: auto;
+    margin-left: 50px;
+    margin-right: 50px;
     border-radius: .5em;
+    padding: 1em;
 }
 
 .navbar {
@@ -86,11 +89,24 @@ p {
 }
 
 .blackSect {
+    width: 100%;
     background-color: rgb(0, 0, 0);
     text-align: center;
-    padding: 2em;
+    padding: 5em 0em 5em 0em;
     margin-bottom: 2em;
     align-items: center;
+}
+
+.blackSect .green-button {
+    margin-top: 50px;
+}
+
+.blackSect img {
+    width: 40%;
+    height: auto;
+    margin: 20px 30px;
+    border-radius: .5em;
+
 }
 
 .blackSect h1 {
@@ -102,9 +118,10 @@ p {
 }
 
 .lightSect {
+    width: 100%;
     background-color: #eae8d9;
     text-align: center;
-    padding: 5em;
+    padding: 5em 0em 5em 0em;
     margin-bottom: 2em;
     align-items: center;
 }
@@ -128,6 +145,7 @@ p {
 }
 
 .greenSect {
+    width: 100%;
     background-color: rgb(76, 155, 88);
     text-align: center;
     padding: 5em;
@@ -157,22 +175,22 @@ p {
 /* Footer Stuff */
 .footer {
     background-color: #fffceb;
-    height: 400px;
+    height: auto;
     text-align: center;
 }
 
 .footerSect{
     display: flex;
+    flex-direction: row;
     justify-content: center;
-    padding-top: 5em;
     height: 100%;
     width: 100%;
+    padding: 1em 1em 2em 1em;
 }
 
 .footerTitleTile {
-    width: 20%;
-    height: 200px;
-    margin-top: -100px;
+    width: 15%;
+    height: auto;
     margin-left: 100px;
 }
 
@@ -191,18 +209,17 @@ p {
 }
 
 .footerTile{
-    width: 20%;
-    height: 300px;
-    margin-top: -100px;
+    width: 15%;
+    height: auto;
     text-align: left;
-    margin-right: 0px;
-    margin-left: 0px;
+    margin: 0px auto 0px auto;
 }
 
 .footerTile h1 {
     color: rgb(76, 155, 88);
     font-size: 2.5em;
     text-align: left;
+    margin-bottom: 0.5em;
 }
 
 .footerTile link {
@@ -220,6 +237,14 @@ p {
     text-align: left;
     margin-top: -10px;
     margin-left: 0px;
+}
+
+.footerTileSect {
+    display: flex;
+    justify-content: center;
+    padding-top: 2em;
+    height: 100%;
+    width: 100%;
 }
 /*--------------------------------------------------*/
 
@@ -335,6 +360,8 @@ p {
 .offerItem h1 {
     font-size: 2em;
     margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
     color: #fffceb;
     font-weight: bold;
 }
@@ -413,15 +440,17 @@ p {
     background-color: transparent;
     padding: 1em;
     margin: auto;
-    width: 80%;
+    width: 100%;
     height: auto;
     display: flex;
+    flex-direction: row;
 }
 
 .cardLeft .cardTextArea {
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 45%;
+    margin-right: 20px;
 }
 
 .cardLeft h1 {
@@ -443,7 +472,7 @@ p {
 
 .cardLeft img {
     height: auto;
-    width: 45%;
+    width: 50%;
     border-radius: 10px;
 }
 
@@ -460,19 +489,18 @@ p {
 .cardRight {
     background-color: transparent;
     padding: 1em;
-    margin: auto;
-    margin-top: 5em;
-    width: 80%;
+    margin: 100px auto 0px auto;
+    width: 100%;
     height: auto;
     display: flex;
-    margin-bottom: -100px;
+    flex-direction: row;
 }
 
 .cardRight .cardTextArea {
     display: flex;
     flex-direction: column;
-    width: 70%;
-    margin-left: auto; /* pushes text area to the right edge */
+    width: 45%;
+    margin-right: 20px;
 }
 
 .cardRight h1 {
@@ -517,7 +545,7 @@ p {
     background-repeat: no-repeat;
     text-align: center;
     background-size: cover;
-    height: 720px;
+    height: auto;
     width: 100%;
     margin-bottom: 2em;
     display: grid;
@@ -819,110 +847,163 @@ p {
 }
 
 
-/* --- MOBILE RESPONSIVE OVERRIDES (Screens smaller than 768px) --- */
-@media screen and (max-width: 768px) {
-    
-    /* 1. Typography & Global Spacing */
-    h1, .imageSect h1, .lightSect h1, .blackSect h1 {
-        font-size: 2.2em !important; /* Scale down giant headers */
-        width: 90% !important;
-        margin: 20px auto !important;
-        padding-bottom: 20px !important;
+
+/* --- RESPONSIVE OVERRIDES --- */
+
+/* 1. Small Laptops & Large Tablets (up to 1024px) */
+@media screen and (max-width: 1024px) {
+    .imageSect h1, .blackSect h1 {
+        width: 90%; /* Scale down from fixed 1000px */
+        font-size: 3.0em;
     }
 
-    p, .imageSect p, .lightSect p {
-        font-size: 1.1em !important;
-        width: 90% !important;
-        margin: 10px auto !important;
-        text-align: center !important;
-    }
-
-    /* 2. Navigation Bar */
     .navbar {
-        flex-direction: column;
-        height: auto;
+        margin-top:100px; 
+        margin-bottom: 175px; 
+    }
+    
+    .cardLeft, .cardRight {
+        width:100%;
+        flex-direction: column; /* Stack image and text vertically */
+        align-items: center;
     }
 
-    .buttonArea {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        gap: 10px;
+    .cardLeft .cardTextArea, .cardRight .cardTextArea, 
+    .cardLeft img, .cardRight img {
+        width: 60%;
+        text-align: center;
     }
 
-    .buttonArea button {
-        margin: 5px 0 !important;
-        width: 100% !important;
-    }
-
-    .spacing {
-        display: none; /* Remove empty spacer on mobile */
-    }
-
-    /* 3. Layout Sections (Stacking) */
-    .cardLeft, .cardRight, .mapSect, .footerSect {
-        flex-direction: column !important;
-        width: 95% !important;
-        align-items: center !important;
-        margin-top: 20px !important;
-    }
-
-    .cardTextArea, .mapTextArea, .footerTitleTile, .footerTile {
-        width: 100% !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        text-align: center !important;
-    }
-
-    .cardLeft img, .cardRight img, #googleMap, #googleMap2 {
-        width: 100% !important;
-        margin: 20px 0 !important;
-        height: 300px !important; /* Fixed height for maps on mobile */
-    }
-
-    .cardLeft .green-button, .cardRight .green-button {
-        align-self: center !important; /* Center buttons that were left-aligned */
-    }
-
-    /* 4. Offer Bars & Reviews */
+    .cardRight h1 { text-align: center; }
+    
     .offerBar {
-        flex-direction: column;
-        margin-top: 0 !important;
+        flex-wrap: wrap; /* Allow items to wrap to next line */
     }
 
     .offerItem, .reviewItem {
-        width: 90% !important;
-        margin: 15px auto !important;
+        width: 90%;
+        margin: 10px auto;
     }
 
-    /* 5. Special Sections Fixes */
-    .imageSect {
+    .footerSect {
+        flex-direction: column;
         height: auto;
-        padding: 50px 0;
     }
 
-    .blackSect {
-        display: flex !important;
-        flex-direction: column !important;
-        padding: 20px !important;
+    .footerTitleTile, .footerTile, #googleMap2 {
+        width: 100%;
+        margin: 20px 0;
+        text-align: center;
     }
 
-    .blackSect img {
-        width: 90% !important;
-        margin: 20px auto !important;
+    .offerBar {
+        margin-bottom: 50px;
+    }
+    
+    .offerItem h1 {
+        text-align: center;
     }
 
-    .blackSect .green-button {
-        margin: 20px auto !important;
+    .mapTextArea h1 {
+        font-size: 2.3em;
+    }
+    
+    .blackSect .overunderline {
+        font-size: 2.5em;
+    }
+
+    .footerSect {
+        padding-top: 2em;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .footerTitleTile, .footerTile {
+        width: 20%;
+        margin: 10px 0;
+        text-align: center;
     }
 
     .footer {
         height: auto;
-        padding-bottom: 50px;
+        width: 100%;
+        padding: 2em 0;
     }
 
-    /* Hide the specific absolute positioning that breaks mobile */
-    .green-button {
-        margin-left: 0 !important;
+    .imageSect .green-button {
+        margin: 50px auto 0px auto;
     }
+}
+
+/* 2. Medium Screens / Standard Laptops (1025px to 1440px) */
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+    .imageSect h1 { width: 800px; font-size: 3.5em; }
+    .imageSect p { width: 700px; }
+    .cardLeft, .cardRight { width: 100%; }
+    .offerItem { width: 280px; }
+    .navbar { margin-top:50px; margin-bottom: 100px}
+    .reviewItem { margin-top: 20px; }
+}
+
+/* 3. Large Screens / 1080p Desktops (1441px to 1920px) */
+@media screen and (min-width: 1441px) and (max-width: 1920px) {
+    /* Your current styles mostly target this range */
+    .navbar { margin-top:50px; margin-bottom: 100px}
+    .imageSect h1 { width: 1000px; }
+    .cardLeft, .cardRight { width: 100%; }
+}
+
+/* 4. Ultra-Large Screens / 4K Monitors (Above 1920px) */
+@media screen and (min-width: 1921px) {
+    body {
+        font-size: 20px; /* Increase base font size for readability */
+    }
+
+    .navbar {
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+
+    .span {
+        width: auto;
+    }
+
+    .glow-on-hover, .glowing-button, .green-button  {
+        font-size: 30px;
+    }
+
+    .imageSect h1 {
+        font-size: 5em;
+        width: 1400px;
+    }
+
+    .imageSect p {
+        font-size: 2.5em;
+        width: 1200px;
+    }
+
+    .cardLeft, .cardRight {
+        width: 100%; /* Keep content centered and not too stretched */
+    }
+
+    .offerItem {
+        width: 450px;
+        padding: 40px;
+    }
+    
+    .green-button {
+        transform: scale(1.2); /* Scale buttons up for 4K */
+        padding: 10px;
+    }
+
+    .bannerSect{
+        background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('images/bannerImgLarge.png');
+    }
+}
+
+/* General Fix for Flexbox containers to prevent squishing */
+.offerBar, .footerSect, .cardLeft, .cardRight {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; 
 }
