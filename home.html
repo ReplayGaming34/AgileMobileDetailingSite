@@ -3,6 +3,11 @@
     <head>
         <link rel="stylesheet" href="home.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript">
+            if (window.innerWidth <= 768) {
+                window.location = "mobileHome.html";
+                }
+        </script>
     </head>
 
     <body>
@@ -30,7 +35,7 @@
                     <button class="glow-on-hover" type="button">Detailing</button>
                     <button class="glow-on-hover" type="button">About</button>
                     <button class="glow-on-hover" type="button">Contact Us</button>
-                    <button class="green-button">Book Now</button>\
+                    <button class="green-button">Book Now</button>
                 </div>
             </div>
 
@@ -57,7 +62,7 @@
                     <!-- This triggers the scroll animation -->
                     <div class="overunderline" style = "color: black">Window Tint</div>
 
-                    <p style = "color: black">
+                    <p style = "color: black; margin-bottom: 25px;">
                         Every car in Houston needs tint. The summer time heat becomes unbearable and the sun continues to pound
                         down the entire day. This is especially true if your car sits outside all day or if you have long
                         commutes across the city.
@@ -79,9 +84,9 @@
 
                 <div class="cardTextArea">
                     <!-- This triggers the scroll animation -->
-                    <div class="overunderline" style = "color: black">Ceramic Coating</div>
+                    <div class="overunderline" style = "color: black;">Ceramic Coating</div>
 
-                    <p style = "color: black">
+                    <p style = "color: black; margin-bottom: 25px;">
                         Ceramic coatings are the ultimate protection for your vehicle’s paint. They provide a durable,
                         long-lasting shield against environmental contaminants, UV rays, and minor scratches.
                     </p>
@@ -104,7 +109,7 @@
             <div class="cardLeft">
                 <div class="cardTextArea">
                     <div class="overunderline">Paint Correction</div>
-                    <p>Every car in Houston needs tint. The summer time heat becomes unbearable and the sun continues to pound down the entire day. This is especially true if you car sits outside all day or if you have long commutes across the city.</p>
+                    <p style = "margin-bottom: 25px;">Every car in Houston needs tint. The summer time heat becomes unbearable and the sun continues to pound down the entire day. This is especially true if you car sits outside all day or if you have long commutes across the city.</p>
                     <p>Window tint helps keep your interior cooler, it makes your car look better (that’s always a plus), and it adds privacy from peeping eyes looking in your vehicle.</p>
                 
                     <button class="green-button">Learn More</button>
@@ -118,7 +123,7 @@
 
                 <div class="cardTextArea">
                     <div class="overunderline" style = "text-align: left; margin-top: 40px; font-weight: 10px;">Paint Protection Film</div>
-                    <p>Ceramic coatings are the ultimate protection for your vehicle’s paint. They provide a durable, long-lasting shield against environmental contaminants, UV rays, and minor scratches.</p>
+                    <p style = "margin-bottom: 25px;">Ceramic coatings are the ultimate protection for your vehicle’s paint. They provide a durable, long-lasting shield against environmental contaminants, UV rays, and minor scratches.</p>
                     <p>With a ceramic coating, your car will maintain its glossy finish and be easier to clean, as dirt and grime have a harder time adhering to the surface.</p>
 
                     <button class="green-button">Learn More</button>
@@ -171,7 +176,7 @@
                 <!-- Bugged on marguerite's laptop, switch from px to percentages -->
                 <div class = "mapTextArea">
                     <h1 style = "color: rgb(76, 155, 88); text-align: left; margin: 20px">Best Auto Detailing Shop In Mechanicsburg, PA</h1>
-                    <p style = "color: rgb(76, 155, 88); text-align: left; margin: -50px 20px 20px 20px; font-size: 25px;">
+                    <p style = "color: rgb(76, 155, 88); text-align: left;">
                         Agile Auto Detailing strives to offer the best car detailing, ceramic coating, paint protection film (PPF), and window tint services in Mechanicsburg, PA. 
                     </p>
                     <button class="green-button" style="margin: 20px; width: 150px;">Get a Quote</button>
@@ -228,20 +233,17 @@
 
 
         <!-- Red Car Background Section -->
-        <div class="imageSect" style="padding-bottom: 100px; display: flex; flex-direction: row;">
-            <div class = "cardLeft" style="margin-top: 150px">
-                <div class="cardTextArea">
-                    <div class="overunderline" style = "text-align: left; margin-top: 40px; font-weight: 10px;">Best Auto Detailing in Mechanicsburg, PA</div>
-                    <p style = "margin-top: 10px; width: 100%">Agile Auto Detailing strives to offer the best car detailing, ceramic coating, paint protection film (PPF), and window tint services in Mechanicsburg, PA. </p>
+        <div class="imageSect" style = "padding: 100px 50px 100px 50px; display: flex; flex-direction: row;">
 
-                    <button class="green-button">Get a Quote</button>
+            <div class="textArea">
+                <div class="overunderline">Best Auto Detailing in Mechanicsburg, PA</div>
 
-                    <img class = "fadeIn" src="images/truck.png" alt="This zooms-in really well and smooth">
+                <p style = "width: 90%">Agile Auto Detailing strives to offer the best car detailing, ceramic coating, paint protection film (PPF), and window tint services in Mechanicsburg, PA. </p>
 
-                </div>
+                <button class="green-button" style = "transform: scale(1.2);">Learn More</button>
             </div>
-        </div>
 
+            <img class = "fadeIn" src="images/tintImage.png" alt="This zooms-in really well and smooth">
         </div>
         <!-- **************************************************************************************************** -->
 

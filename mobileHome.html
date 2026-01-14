@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="home.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agile Auto Detailing | Mobile</title>
+    <style>
+        /* Mobile-Specific Overrides */
+        body { overflow-x: hidden; }
+        
+        /* Hamburger Menu Styles */
+        .mobile-nav {
+            background: rgb(17, 17, 17);
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid rgb(76, 155, 88);
+        }
+        .hamburger {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: rgb(76, 155, 88);
+            border-radius: 2px;
+        }
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            background: rgb(17, 17, 17);
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+        }
+        .nav-links.active { display: flex; }
+        .nav-links button { margin: 10px auto; width: 80%; }
+
+        /* Smaller Offer Tiles */
+        .offerItem.small-mobile {
+            width: 85% !important;
+            margin: 10px auto !important;
+            padding: 15px !important;
+        }
+        .offerItem.small-mobile h1 { font-size: 1.5em !important; }
+        .offerItem.small-mobile p { font-size: 1.1em !important; }
+
+        /* Content Adjustments */
+        .cardLeft, .cardRight { flex-direction: column !important; align-items: center; padding: 2em 1em !important; }
+        .cardTextArea { width: 100% !important; text-align: center; margin: 0 !important; }
+        .cardLeft img, .cardRight img { width: 90% !important; margin: 20px 0 !important; }
+        .overunderline { font-size: 2.2em !important; display: block; text-align: center; }
+        .imageSect h1 { width: 90% !important; font-size: 2.5em !important; line-height: 1.1; }
+        .imageSect p { width: 90% !important; font-size: 1.2em !important; }
+    </style>
+</head>
+<body>
+
+    <nav class="mobile-nav">
+        <div style="color: rgb(76, 155, 88); font-weight: bold; font-size: 1.2em;">Agile Auto</div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-links" id="mobileMenu">
+            <button class="glow-on-hover">Home</button>
+            <button class="glow-on-hover">Paint Correction</button>
+            <button class="glow-on-hover">Film Services</button>
+            <button class="glow-on-hover">Detailing</button>
+            <button class="glow-on-hover">Contact</button>
+            <button class="green-button">Book Now</button>
+        </div>
+    </nav>
+
+    <div class="header" style="font-size: 13px;">
+        Winter Notice: Shop services only for the remainder of the season.
+    </div>
+
+    <div class="imageSect" style="padding: 3em 1em;">
+        <h1 style = "padding-top: 30px">Best Auto Detailing In Mechanicsburg, PA</h1>
+        <p style = "text-align: center;">125+ Five-Star Reviews! Ceramic Coating, Tint, & PPF.</p>
+        <button class="green-button">Get a Quote</button>
+    </div>
+
+    <div class="lightSect">
+        <div class="cardLeft">
+            <div class="cardTextArea">
+                <div class="overunderline" style="color: black">Window Tint</div>
+                <p style="color: black; width: 100%;">Adds privacy and keeps your interior cooler during PA summers.</p>
+            </div>
+            <img src="images/tintImage.png">
+            <button class="green-button">Learn More</button>
+        </div>
+
+        <div class="cardLeft">
+            <div class="cardTextArea">
+                <div class="overunderline" style="color: black">Ceramic Coating</div>
+                <p style="color: black; width: 100%;">Durable shield against UV rays and environmental contaminants.</p>
+            </div>
+            <img src="images/coatingImg.png">
+            <button class="green-button">Learn More</button>
+        </div>
+
+        <div class="cardLeft">
+            <div class="cardTextArea">
+                <div class="overunderline" style="color: black">Paint Correction</div>
+                <p style="color: black; width: 100%;">Restoring that showroom shine to your vehicle's paint.</p>
+            </div>
+            <img src="images/correctionImg.png">
+            <button class="green-button">Learn More</button>
+        </div>
+    </div>
+
+    <div class="blackSect">
+        <h2 style="color: #fffceb; font-size: 1.8em; margin-bottom: 20px;">Detailing Services</h2>
+        <div class="offerItem small-mobile">
+            <h1>Wash, Clay, & Seal</h1>
+            <p>Exterior cleaning and sealant for protection.</p>
+            <button class="green-button">Details</button>
+        </div>
+        <div class="offerItem small-mobile">
+            <h1>Interior Detail</h1>
+            <p>Deep clean of all interior surfaces.</p>
+            <button class="green-button">Details</button>
+        </div>
+        <div class="offerItem small-mobile">
+            <h1>Full Detail</h1>
+            <p>The complete package for inside and out.</p>
+            <button class="green-button">Details</button>
+        </div>
+        <div class="offerItem small-mobile">
+            <h1>Engine Bay</h1>
+            <p>Safe cleaning of your engine compartment.</p>
+            <button class="green-button">Details</button>
+        </div>
+        <div class="offerItem small-mobile">
+            <h1>Headlight Restoration</h1>
+            <p>Clear up foggy lenses for better visibility.</p>
+            <button class="green-button">Details</button>
+        </div>
+    </div>
+
+    <div class="footer" style="padding: 40px 20px; text-align: center;">
+        <h1 style="color: rgb(76, 155, 88); font-size: 2em;">Agile Auto Detailing</h1>
+        <p style="color: #333; font-size: 1.1em;">4713 Carlisle Pike, Mechanicsburg, PA</p>
+        
+        <div style="margin: 20px 0;">
+            <p style="color: rgb(76, 155, 88); font-weight: bold;">(717) 210-8578</p>
+            <p style="color: rgb(76, 155, 88);">agilemobiledetailing@gmail.com</p>
+        </div>
+
+        <div style="border-top: 1px solid #ccc; padding-top: 20px;">
+            <h2 style="color: rgb(76, 155, 88);">Hours</h2>
+            <p style="color: #333;">Mon - Sat: 8am - 6pm</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
