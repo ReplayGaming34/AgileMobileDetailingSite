@@ -1063,4 +1063,8 @@ p {
     .footer p{
         font-size: 1.5em
     }
+
+    .navbar .green-button {
+        margin-left: 15px
+    }
 }
