@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="home.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript">
+            if (window.innerWidth <= 768) {
+                window.location = "mobileHome.html";
+                }
+        </script>
+    </head>
+
+    <body style = "background-color: beige;">
+        <div class = "blackHeader" style = "padding: 3em 0em 3em 0em; margin-bottom: -100px; height: auto">
+            <div class="navbar">
+
+                <div>
+                    <div class="animdiv"><a>Agile</a></div>
+                    <div class="animdiv">
+                        <span>Auto Detailing</span>
+                    </div>
+                </div>
+
+                <div class="spacing"></div>
+                <div style = "padding-bottom: 15px">
+                    <a class = "glow-on-hover" href="home.html">Home</a>
+                    <a class = "glow-on-hover" href="correctionAndCoating.html">Paint Correction and Ceramic Coating</a>
+                    <button class="glowing-button" type="button">Film Services</button>
+                    <a class = "glow-on-hover" href="detailing.html">Detailing</a>
+                    <a class = "glow-on-hover" href="about.html">About</a>
+                    <a class = "glow-on-hover" href="contact.html">Contact</a>
+                    <button class="green-button">Book Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class = "lightSect">
+            <h1>Add Info Here</h1>
+        </div>
+
+        <!-- Footer Section -->
+        <div class="footer">
+            <div class = "footerSect">
+                <div class = "footerTitleTile">
+                    <h1>Agile Auto Detailing</h1>
+                    <p style = "color: rgb(59, 59, 59)">4713 Carlisle Pike Mechanicsburg, PA, 17050</p>
+                    <p href="agilemobiledetailing@gmail.com" style="color: rgb(76, 155, 88); margin-top: 30px">agilemobiledetailing@gmail.com</p>
+                    <p href="(717) 210-8578" style="color: rgb(76, 155, 88);">(717) 210-8578</p>
+                </div>
+
+                <div id="googleMap2" style="width: 200px; height: 200px; margin: 50px 75px 0px 125px;"></div>
+
+                <div class = "footerTile">
+                    <h1>Services</h1>
+                    <p href="#">Mobile Detailing</p>
+                    <p href="#">Ceramic Coating</p>
+                    <p href="#">Window Tint</p>
+                    <p href="#">Paint Protection Film</p>
+                </div>
+
+                <div class = "footerTile" style = "padding-left: 20px;">
+                    <h1>Hours</h1>
+                    <p>Monday - Saturday</p>
+                    <p>8:00am - 6:00pm</p>    
+                </div>
+
+                <div class = "footerTile">
+                    <h1>Follow</h1>
+                    <p href="https://www.facebook.com/p/Agile-Mobile-Detailing-61563895588637/">Facebook</link>
+                    <p href="https://www.instagram.com/agileautodetailing/">Instagram</link>
+                </div>
+            </div>
+        </div>
+        <!-- **************************************************************************************************** -->
+
+        <!-- Scroll-trigger script -->
+        <script src="home.js"></script>
+
+        <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCD7AOb5bY-nZ3PE5p_F60zVPO9ofwCRvg&callback=initGoogleMap"
+            async
+            defer
+        ></script>
+
+        <!-- SWITCH EVERYTHING TO GREEN INSTEAD OF BLUE -->
+
+    </body>
+</html>
