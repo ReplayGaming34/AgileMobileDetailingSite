@@ -43,6 +43,10 @@ p {
     justify-content: center;
 }
 
+.footerLink {
+    font-size: 20px;
+}
+
 .blackHeader {
     width: 100%;
     height: auto;
@@ -490,7 +494,7 @@ p {
 
 .cardLeft img {
     height: auto;
-    width: 40%;
+    width: 50%;
     border-radius: 10px;
 }
 
