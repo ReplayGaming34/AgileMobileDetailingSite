@@ -3,15 +3,22 @@
     <head>
         <link rel="stylesheet" href="home.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <script type="text/javascript">
             if (window.innerWidth <= 768) {
                 window.location = "mobileHome.html";
-                }
+            }
         </script>
     </head>
 
-    <body style = "background-color: beige;">
-        <div class = "blackHeader" style = "padding: 3em 0em 3em 0em; margin-bottom: -100px; height: auto">
+    <body>
+        <!-- Home Banner Section -->
+        <!-- **************************************************************************************************** -->
+        <div class="header">
+            Our mobile unit is not operating for the remainder of the winter. All services must be completed at our shop.
+        </div>
+
+        <div class="imageSect">
             <div class="navbar">
 
                 <div>
@@ -21,30 +28,260 @@
                     </div>
                 </div>
 
-                <div class="spacing"></div>
-                <div style = "padding-bottom: 15px">
-                    <a class = "glow-on-hover" href="home.html">Home</a>
+                <div>
+                    <button class="glowing-button" type="button">Home</button>
                     <a class = "glow-on-hover" href="correctionAndCoating.html">Paint Correction and Ceramic Coating</a>
                     <a class = "glow-on-hover" href="filmServices.html">Film Services</a>
                     <a class = "glow-on-hover" href="detailing.html">Detailing</a>
-                    <button class="glowing-button" type="button">About</button>
+                    <a class = "glow-on-hover" href="about.html">About</a>
                     <a class = "glow-on-hover" href="contact.html">Contact</a>
-                    <button class="green-button">Book Now</button>
+                    <a class ="green-button" href = "https://app.urable.com/virtual-shop/MifYaST8IVzh9fdpHGDD">Book Now</a>
+                </div>
+            </div>
+
+            <div>
+                <h1>Best Auto Detailing In Mechanicsburg, PA</h1>
+                <p style = "text-align: center">
+                    Over 125 five-star reviews on Google, Agile Auto Detailing offers mobile detailing, window tint, ceramic coatings,
+                    and paint protection film in Mechanicsburg, PA!
+                </p>
+                <a href = "quote.html"><button class="green-button" style="margin-right: 50px;">Get a Quote</button></a>
+                <a href="https://app.urable.com/virtual-shop/MifYaST8IVzh9fdpHGDD"><button class = "green-button">Book Now</button></a>
+            </div>
+        </div>
+        <!-- **************************************************************************************************** -->
+
+
+        <!-- Tint and Coating Section -->
+        <!-- **************************************************************************************************** -->
+        <div class="lightSect">
+            <h1 style = "margin-top: 30px; margin-bottom: -50px;">Our Detailing & Film Services</h1>
+
+            <div class="cardLeft">
+                <div class="cardTextArea">
+                    <!-- This triggers the scroll animation -->
+                    <div class="overunderline" style = "color: black">Window Tint</div>
+
+                    <p style = "color: black; margin-bottom: 25px;">
+                        Every car in Houston needs tint. The summer time heat becomes unbearable and the sun continues to pound
+                        down the entire day. This is especially true if your car sits outside all day or if you have long
+                        commutes across the city.
+                    </p>
+
+                    <p style = "color: black">
+                        Window tint helps keep your interior cooler, it makes your car look better (that’s always a plus),
+                        and it adds privacy from peeping eyes looking in your vehicle.
+                    </p>
+                    
+                    <a href="filmServices.html"><button class = "green-button">Learn More</button></a>
+                </div>
+
+                <img class = "fadeIn" src="images/tintImage.png" alt="This zooms-in really well and smooth">
+            </div>
+
+            <div class="cardRight">
+                <img class = "fadeIn"src="images/coatingImg.png" alt="This zooms-in really well and smooth">
+
+                <div class="cardTextArea">
+                    <!-- This triggers the scroll animation -->
+                    <div class="overunderline" style = "color: black;">Ceramic Coating</div>
+
+                    <p style = "color: black; margin-bottom: 25px;">
+                        Ceramic coatings are the ultimate protection for your vehicle’s paint. They provide a durable,
+                        long-lasting shield against environmental contaminants, UV rays, and minor scratches.
+                    </p>
+
+                    <p style = "color: black">
+                        With a ceramic coating, your car will maintain its glossy finish and be easier to clean, as dirt
+                        and grime have a harder time adhering to the surface.
+                    </p>
+
+                    <a href="filmServices.html"><button class = "green-button">Learn More</button></a>
                 </div>
             </div>
         </div>
+        <!-- **************************************************************************************************** -->
 
+
+        <!-- Correction, Film, and Other Offers Section -->
+        <!-- **************************************************************************************************** -->
+        <div class="blackSect">
+            <div class="cardLeft">
+                <div class="cardTextArea">
+                    <div class="overunderline">Paint Correction</div>
+                    <p style = "margin-bottom: 25px;">Every car in Houston needs tint. The summer time heat becomes unbearable and the sun continues to pound down the entire day. This is especially true if you car sits outside all day or if you have long commutes across the city.</p>
+                    <p>Window tint helps keep your interior cooler, it makes your car look better (that’s always a plus), and it adds privacy from peeping eyes looking in your vehicle.</p>
+                
+                    <a href="correctionAndCoating.html"><button class = "green-button">Learn More</button></a>
+                </div>
+
+                <img class = "fadeIn" src="images/correctionImg.png" alt="This zooms-in really well and smooth">
+            </div>
+
+            <div class="cardRight">
+                <img class = "fadeIn" src="images/filmImg.png" alt="This zooms-in really well and smooth">
+
+                <div class="cardTextArea">
+                    <div class="overunderline" style = "text-align: left; margin-top: 40px; font-weight: 10px;">Paint Protection Film</div>
+                    <p style = "margin-bottom: 25px;">Ceramic coatings are the ultimate protection for your vehicle’s paint. They provide a durable, long-lasting shield against environmental contaminants, UV rays, and minor scratches.</p>
+                    <p>With a ceramic coating, your car will maintain its glossy finish and be easier to clean, as dirt and grime have a harder time adhering to the surface.</p>
+
+                    <a href="correctionAndCoating.html"><button class = "green-button">Learn More</button></a>
+                </div>
+            </div>
+
+            <h1 style = "margin: auto; width: 1000px; padding-top: 100px;">Other Detailing Services We Offer In Mechanicsburg</h1>
+        
+            <div class = "offerBar">
+                <div class="offerItem">
+                    <h1>Wash, Clay, & Seal</h1>
+                    <p>Get your exterior looking clean and glossy. This includes clay barring the paint and applying a sealant for protection.</p>
+                    <button class="green-button" style="margin-top: 20px;">Learn More</button>
+                </div>
+
+                <div class="offerItem">
+                    <h1>Wash, Clay, & Seal</h1>
+                    <p>Get your exterior looking clean and glossy. This includes clay barring the paint and applying a sealant for protection.</p>
+                    <button class="green-button" style="margin-top: 20px;">Learn More</button>
+                </div>
+
+                <div class="offerItem">
+                    <h1>Wash, Clay, & Seal</h1>
+                    <p>Get your exterior looking clean and glossy. This includes clay barring the paint and applying a sealant for protection.</p>
+                    <button class="green-button" style="margin-top: 20px;">Learn More</button>
+                </div>
+            </div>
+
+            <div class = "offerBar" style="margin-top: -150px;">
+                <div class="offerItem">
+                    <h1>Wash, Clay, & Seal</h1>
+                    <p>Get your exterior looking clean and glossy. This includes clay barring the paint and applying a sealant for protection.</p>
+                    <button class="green-button" style="margin-top: 20px;">Learn More</button>
+                </div>
+
+                <div class="offerItem">
+                    <h1>Wash, Clay, & Seal</h1>
+                    <p>Get your exterior looking clean and glossy. This includes clay barring the paint and applying a sealant for protection.</p>
+                    <button class="green-button" style="margin-top: 20px;">Learn More</button>
+                </div>      
+            </div>
+        <!-- **************************************************************************************************** -->
+
+
+        <!-- Map Section -->
         <div class = "lightSect">
-            <h1>Add Info Here</h1>
+            <div class = "mapSect">
+                <div id="googleMap" style="margin-left: 70px; width: 50%; height: 600px; border-radius: 8px;"></div>
+
+                <!-- Bugged on marguerite's laptop, switch from px to percentages -->
+                <div class = "mapTextArea">
+                    <h1 style = "color: rgb(76, 155, 88); text-align: left; margin: 20px">Best Auto Detailing Shop In Mechanicsburg, PA</h1>
+                    <p style = "color: rgb(76, 155, 88); text-align: left;">
+                        Agile Auto Detailing strives to offer the best car detailing, ceramic coating, paint protection film (PPF), and window tint services in Mechanicsburg, PA. 
+                    </p>
+                    <a href="https://app.urable.com/virtual-shop/MifYaST8IVzh9fdpHGDD" style = "padding-bottom: 0px"><button class = "green-button">Get a Quote</button></a>
+                </div>
+            </div>
+
+            <h1 style = "margin-top: 200px;">Auto Detailing FAQs</h1>
+            <p style = "text-align: center;">Agile Auto Detailing strives to offer the best car detailing, ceramic coating, paint protection film (PPF), and window tint services in Mechanicsburg, PA.</p>
+            
+            <div class="dropdownArea">
+                <div class="menu">
+                    <li class="item" id="mn1">
+                        <a class="btn" href="#mn1">Why do I need to get my car detailed?</a>
+                        <div class="submenu">
+                            <a>Description Text Goes Here</a>
+                        </div>
+                    </li>
+                    <li class="item" id="mn2">
+                        <a class="btn" href="#mn2">Accordian Item 2</a>
+                        <div class="submenu">
+                            <a>Description Text Goes Here</a>
+                        </div>
+                    </li>
+                    <li class="item" id="mn3">
+                        <a class="btn" href="#mn3">Accordian Item 3</a>
+                        <div class="submenu">
+                            <a>Description Text Goes Here</a>
+                        </div>
+                    </li>
+                </div>   
+            </div>
         </div>
+        <!-- **************************************************************************************************** -->
+
+
+        <!-- Truck Section -->
+        <div class="blackSect" style="padding-bottom: 50px; display: flex; flex-direction: row;">
+            <img class = "fadeIn" src="images/truck.png" alt="This zooms-in really well and smooth">
+
+            <div class = "textArea" style="margin-top: 150px">
+                <div class = "overunderline">
+                    Best Auto Detailing in Mechanicsburg, PA
+                </div>
+
+                <h2 style = "text-align: left; font-weight: normal; font-size: 2em; color: #fffceb">Agile Auto Detailing strives to offer the best car detailing, ceramic coating, paint protection film (PPF), and window tint services in Mechanicsburg, PA. </h2>
+                <p style = "font-size: 1.3em; line-height: 1.5em; text-align: left; color: #fffceb; width: 80%; margin: 20px auto 10px 30px;">• Agile Auto Detailing strives to offer the best car detailing, ceramic coating, paint protection film (PPF), and window tint services in Mechanicsburg, PA.</p>
+                <p style = "font-size: 1.3em; line-height: 1.5em; text-align: left; color: #fffceb; width: 80%; margin: 20px auto 10px 30px;">• Looking for top-notch mobile detailing? Agile Mobile Detailing is perfect for you! We proudly serve Tulsa and surrounding areas. At Agile Mobile Detailing, customer satisfaction is our priority. We work around your schedule—just let us know your preferred time and date. In the rare event of any delays, we’ll keep you informed.</p>
+
+                <a href="https://app.urable.com/virtual-shop/MifYaST8IVzh9fdpHGDD" style = "padding-bottom: 0px"><button class = "green-button">Get a Quote</button></a>
+            </div>
+
+        </div>
+        <!-- **************************************************************************************************** -->
+
+
+        <!-- Red Car Background Section -->
+        <div class="imageSect" style = "padding: 100px 50px 100px 50px; display: flex; flex-direction: row;">
+
+            <div class="textArea">
+                <div class="overunderline">Best Auto Detailing in Mechanicsburg, PA</div>
+
+                <p style = "width: 90%">Agile Auto Detailing strives to offer the best car detailing, ceramic coating, paint protection film (PPF), and window tint services in Mechanicsburg, PA. </p>
+
+                    <a href="about.html"><button class = "green-button">Learn More</button></a>
+            </div>
+
+            <img class = "fadeIn" src="images/tintImage.png" alt="This zooms-in really well and smooth">
+        </div>
+        <!-- **************************************************************************************************** -->
+
+        <!-- Reviews Section -->
+        <div class = "greenSect">
+            <h1 style = "margin: auto; color: #fffceb; font-size: 4em; margin-bottom: 50px;">Read Our Great Reviews</h1>
+            <div class = "offerBar">
+                <div class="reviewItem">
+                    <p>Agile Auto Detailing strives to offer the best car detailing, ceramic coating, paint protection film (PPF), and window tint services in Mechanicsburg, PA. Agile Auto Detailing strives to offer the best car detailing, ceramic coating, paint protection film (PPF), and window tint services in Mechanicsburg, PA. Agile Auto Detailing strives to offer the best car detailing, ceramic coating, paint protection film (PPF), and window tint services in Mechanicsburg, PA.</p>
+                </div>
+
+                <div class="reviewItem">
+                    <p>Agile Auto Detailing strives to offer the best car detailing, ceramic coating, paint protection film (PPF), and window tint services in Mechanicsburg, PA. Agile Auto Detailing strives to offer the best car detailing, ceramic coating, paint protection film (PPF), and window tint services in Mechanicsburg, PA. Agile Auto Detailing strives to offer the best car detailing, ceramic coating, paint protection film (PPF), and window tint services in Mechanicsburg, PA.</p>
+                </div>      
+
+                <div class="reviewItem">
+                    <p>Agile Auto Detailing strives to offer the best car detailing, ceramic coating, paint protection film (PPF), and window tint services in Mechanicsburg, PA. Agile Auto Detailing strives to offer the best car detailing, ceramic coating, paint protection film (PPF), and window tint services in Mechanicsburg, PA. Agile Auto Detailing strives to offer the best car detailing, ceramic coating, paint protection film (PPF), and window tint services in Mechanicsburg, PA.</p>
+                </div>
+            </div>
+        </div>
+        <!-- **************************************************************************************************** -->
+
+        <!-- Bottom Dark Sect -->
+        <div class="blackSect" style="padding-bottom: 50px;">
+            <h1 style = "margin: auto; color: #fffceb; font-size: 4em; margin-top: 50px;">Best Auto Detailing in Mechanicsburg, PA</h1>
+            <p style = "color: #fffceb; font-size: 1.8em; margin-top: 30px; text-align: center">Agile Auto Detailing strives to offer the best car detailing, ceramic coating, paint protection film (PPF), and window tint services in Mechanicsburg, PA.</p>
+            <p style = "color: #fffceb; font-size: 1.8em; text-align: center; margin-top: 80px">Looking for top-notch mobile detailing? Agile Mobile Detailing is perfect for you! We proudly serve Mechanicsburg and surrounding areas. At Agile Mobile Detailing, customer satisfaction is our priority. We work around your schedule—just let us know your preferred time and date. In the rare event of any delays, we’ll keep you informed.</p>
+            <a href="https://app.urable.com/virtual-shop/MifYaST8IVzh9fdpHGDD" style = "padding-bottom: 0px"><button class = "green-button">Get a Quote</button></a>
+        </div>
+        <!-- **************************************************************************************************** -->
 
         <!-- Footer Section -->
         <div class="footer">
             <div class = "footerSect">
                 <div class = "footerTitleTile">
                     <h1>Agile Auto Detailing</h1>
-                    <p style = "color: rgb(59, 59, 59)">4713 Carlisle Pike Mechanicsburg, PA, 17050</p>
-                    <p href="agilemobiledetailing@gmail.com" style="color: rgb(76, 155, 88); margin-top: 30px">agilemobiledetailing@gmail.com</p>
+                    <p style = "color: rgb(59, 59, 59);">4713 Carlisle Pike Mechanicsburg, PA, 17050</p>
+                    <p style="color: rgb(76, 155, 88); margin-top: 30px;">agilemobiledetailing@gmail.com</p>
                     <p href="(717) 210-8578" style="color: rgb(76, 155, 88);">(717) 210-8578</p>
                 </div>
 
@@ -52,10 +289,10 @@
 
                 <div class = "footerTile">
                     <h1>Services</h1>
-                    <p href="#">Mobile Detailing</p>
-                    <p href="#">Ceramic Coating</p>
-                    <p href="#">Window Tint</p>
-                    <p href="#">Paint Protection Film</p>
+                    <a href="detailing.html"><p style = "font-size: 20px;">Mobile Detailing</p></a>
+                    <a href="correctionAndCoating.html"><p style = "font-size: 20px;">Ceramic Coating</p></a>
+                    <a href="filmServices.html"><p style = "font-size: 20px">Window Tint</p></a>
+                    <a href="correctionAndCoating.html"><p style = "font-size: 20px">Paint Protection Film</p></a>
                 </div>
 
                 <div class = "footerTile" style = "padding-left: 20px;">
@@ -66,8 +303,8 @@
 
                 <div class = "footerTile">
                     <h1>Follow</h1>
-                    <p href="https://www.facebook.com/p/Agile-Mobile-Detailing-61563895588637/">Facebook</link>
-                    <p href="https://www.instagram.com/agileautodetailing/">Instagram</link>
+                    <a href="https://www.facebook.com/p/Agile-Mobile-Detailing-61563895588637/"><p style = "font-size: 20px">Facebook</p></a>
+                    <a href="https://www.instagram.com/agileautodetailing/"><p style = "font-size: 20px">Instagram</p></a>
                 </div>
             </div>
         </div>
@@ -76,13 +313,11 @@
         <!-- Scroll-trigger script -->
         <script src="home.js"></script>
 
+        <!-- ✅ Google Maps API (NO callback now) -->
         <script
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCD7AOb5bY-nZ3PE5p_F60zVPO9ofwCRvg&callback=initGoogleMap"
-            async
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCD7AOb5bY-nZ3PE5p_F60zVPO9ofwCRvg"
             defer
         ></script>
-
-        <!-- SWITCH EVERYTHING TO GREEN INSTEAD OF BLUE -->
 
     </body>
 </html>
