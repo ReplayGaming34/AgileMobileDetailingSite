@@ -1,6 +1,8 @@
-document.addEventListener("DOMContentLoaded", () => {
-    /* ---------------- Scroll Animations ---------------- */
+/* ---------------- Scroll Animations ---------------- */
+function initScrollAnimations() {
     const elements = document.querySelectorAll(".overunderline, .fadeIn");
+
+    if (!elements.length) return;
 
     const observer = new IntersectionObserver(
         (entries) => {
@@ -15,10 +17,28 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
     elements.forEach(el => observer.observe(el));
+}
 
-    /* ---------------- Google Maps Init ---------------- */
+/* ---------------- Google Maps Init ---------------- */
+function safeInitMaps() {
+    if (!(window.google && window.google.maps)) return;
 
-    // Wait until Google Maps API is actually loaded
+    initGoogleMap();
+}
+
+/* ---------------- Page Lifecycle Hooks ---------------- */
+
+// Normal load
+document.addEventListener("DOMContentLoaded", () => {
+    initScrollAnimations();
+});
+
+// Handles back/forward cache + navigation restore
+window.addEventListener("pageshow", (event) => {
+    // pageshow fires on normal load + bfcache restore
+    initScrollAnimations();
+
+    // force map re-init
     if (window.google && window.google.maps) {
         initGoogleMap();
     } else {
@@ -38,6 +58,8 @@ function initGoogleMap() {
     /* -------- Main Map -------- */
     const mapDiv1 = document.getElementById("googleMap");
     if (mapDiv1) {
+        mapDiv1.innerHTML = ""; // 🔥 force reset DOM
+
         const map1 = new google.maps.Map(mapDiv1, {
             zoom: 12,
             center: location1,
@@ -53,6 +75,8 @@ function initGoogleMap() {
     /* -------- Footer Map -------- */
     const mapDiv2 = document.getElementById("googleMap2");
     if (mapDiv2) {
+        mapDiv2.innerHTML = ""; // 🔥 force reset DOM
+
         const map2 = new google.maps.Map(mapDiv2, {
             zoom: 12,
             center: location1,
