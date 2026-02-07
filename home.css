@@ -1,16 +1,13 @@
-/* --- Google Maps Containers (Critical Fix) --- */
 #googleMap, #googleMap2 {
     height: 450px; /* Adjust height as needed */
     width: 100%;
     min-height: 300px;
     background-color: #e5e3df; /* Matches Google Maps default gray before tiles load */
 }
-
 body {
     width: 100%;
     background-color: rgb(17, 17, 17);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
 }
 
 a {
@@ -62,12 +59,12 @@ p {
     text-align: center;
     padding: 5em 0em 5em 0em;
     margin-bottom: 2em;
+    align-items: center;
 }
 
 .mapSect {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; /* Helps with mobile responsiveness */
 }
 
 .mapTextArea {
@@ -97,15 +94,17 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
+    animation: showup 7s forwards;
 }
 
 .green-button {
-    margin: 35px 1px 30px;
+    margin: 35px 1px 30px; /* spacing between links */
     padding: 10px 20px;
     font-size: 20px;
     width: auto;
     height: 60px;
     border: none;
+    border-width: .5px;
     outline: none;
     color: #111;
     background: rgb(76, 155, 88);
@@ -121,6 +120,11 @@ p {
     text-align: center;
     padding: 5em 0em 5em 0em;
     margin-bottom: 2em;
+    align-items: center;
+}
+
+.blackSect .green-button {
+    margin-top: 50px;
 }
 
 .blackSect img {
@@ -128,6 +132,7 @@ p {
     height: auto;
     margin: 20px 30px;
     border-radius: .5em;
+
 }
 
 .blackSect h1 {
@@ -144,6 +149,7 @@ p {
     text-align: center;
     padding: 5em 0em 5em 0em;
     margin-bottom: 2em;
+    align-items: center;
 }
 
 .lightSect h1 {
@@ -170,6 +176,7 @@ p {
     text-align: center;
     padding: 5em;
     margin-bottom: 2em;
+    align-items: center;
 }
 
 .reviewItem {
@@ -190,22 +197,26 @@ p {
     margin: 70px auto 70px auto;
 }
 
-/* Footer */
+
+/* Footer Stuff */
 .footer {
     background-color: #fffceb;
     height: auto;
     text-align: center;
 }
 
-.footerSect {
+.footerSect{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    height: 100%;
+    width: 100%;
     padding: 1em 1em 2em 1em;
 }
 
 .footerTitleTile {
     width: 15%;
+    height: auto;
     margin-left: 100px;
 }
 
@@ -219,10 +230,14 @@ p {
     color: rgb(76, 155, 88);
     font-size: 1.2em;
     text-align: left;
+    margin-top: 0px;
+    margin-left: 0px;
 }
 
-.footerTile {
+.footerTile{
     width: 15%;
+    height: auto;
+    text-align: left;
     margin: 0px auto 0px auto;
 }
 
@@ -230,10 +245,835 @@ p {
     color: rgb(76, 155, 88);
     font-size: 2.5em;
     text-align: left;
+    margin-bottom: 0.5em;
+}
+
+.footerTile link {
+    display: block;
+    color: rgb(76, 155, 88);
+    font-size: 1.2em;
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 0px;
 }
 
 .footerTile p {
     color: rgb(76, 155, 88);
     font-size: 1.2em;
     text-align: left;
+    margin-top: -10px;
+    margin-left: 0px;
+}
+
+.footerTileSect {
+    display: flex;
+    justify-content: center;
+    padding-top: 2em;
+    height: 100%;
+    width: 100%;
+}
+/*--------------------------------------------------*/
+
+/* Dropdown Stuff */
+.dropdownArea {
+    background: rgb(76, 155, 88);
+    color: #fffceb;
+    width: 85%;
+    height: auto;
+    margin: 0px auto 20px auto;
+    border-radius: .5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8em 5em 8em 5em;
+}
+
+:root{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*{
+    text-decoration: none;
+    color:white;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.accordianBody{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #555;
+    overflow: hidden;
+}
+
+.menu{
+    width: 90%;
+    height: auto;
+    background: transparent;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.menu .btn{
+    display:block;
+    padding: 1rem;
+    border-bottom: solid 1px #1b1b2f;
+    border-top: solid 1px #1f4068;
+    position: relative;
+    color: #fffceb;
+    text-align: left;
+}
+
+.menu .submenu {
+    background: rgb(59, 59, 59);
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .8s ease-out;
+}
+
+.menu .submenu a{
+    display:block;
+    padding: 1rem;
+    position: relative;
+    color: #fffceb;
+    text-align: left;
+    font-size: 1rem;
+}
+
+.menu .submenu a::before{
+    content:'';
+    display:block;
+    position: absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 5px;
+    background: #fffceb;
+    opacity: 0;
+}
+
+.menu .submenu a:hover{
+    padding-left: calc(1rem + 5px);
+}
+
+.menu .submenu a:hover::before{
+    opacity: 1;
+}
+
+.item:target .submenu{
+    max-height: 20rem;
+}
+/*--------------------------------------------------*/
+
+/* Offer Bar Stuff */
+.offerItem {
+    background-color: rgb(59, 59, 59);
+    width: 320px;
+    height: auto;
+    padding: 10px 20px;
+    margin: 40px;
+    border-radius: 1em;
+}
+
+.offerItem h1 {
+    font-size: 2em;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #fffceb;
+    font-weight: bold;
+}
+
+.offerItem p {
+    font-size: 1.5em;
+    line-height: 1.5em;
+    text-align: left;
+    color: #fffceb;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.offerBar{
+    background-color: transparent;
+    text-align: center;
+    margin-bottom: 2em;
+    margin-top:-100px;
+    padding-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.offerItem:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s;
+}
+
+.offerItem:before {
+    content: '';
+    background: linear-gradient(45deg, rgb(76, 155, 88), rgb(63, 129, 73), rgb(76, 155, 88), rgb(63, 129, 73), rgb(76, 155, 88));
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.offerItem:active {
+    color: #000
+}
+
+.offerItem:active:after {
+    background: transparent;
+}
+
+.offerItem:hover:before {
+    opacity: 1;
+}
+
+.offerItem:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+/*--------------------------------------------------*/
+
+
+/* Card Left Stuff */
+.cardLeft {
+    background-color: transparent;
+    padding: 1em;
+    margin: auto;
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.cardLeft .cardTextArea {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    margin-right: 20px;
+}
+
+.cardLeft h1 {
+    font-size: 3.3em;
+    color: #fffceb;
+    margin-bottom: 1em;
+    text-align: left;
+}
+
+.cardLeft p {
+    font-size: 1.5em;
+    line-height: 1.5em;
+    text-align: left;
+    color: #fffceb;
+    width: 90%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.cardLeft img {
+    height: auto;
+    width: 50%;
+    border-radius: 10px;
+}
+
+.cardLeft .green-button {
+    align-self: flex-start;
+    margin-top: 30px;
+    width: 250px;
+    height: 75px;
+}
+/*--------------------------------------------------*/
+
+
+/* Card Right Stuff */
+.cardRight {
+    background-color: transparent;
+    padding: 1em;
+    margin: 100px auto 0px auto;
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.cardRight .cardTextArea {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    margin-right: 20px;
+}
+
+.cardRight h1 {
+    font-size: 3.3em;
+    color: #fffceb;
+    margin-bottom: 1em;
+    text-align: right;
+}
+
+.cardRight p {
+    font-size: 1.5em;
+    line-height: 1.5em;
+    text-align: left;
+    color: #fffceb;
+    width: 90%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.cardRight img {
+    height: auto;
+    width: 50%;
+    margin-right: 2em;
+    border-radius: 10px;
+    margin-bottom: 100px;
+}
+
+.cardRight .green-button {
+    align-self: flex-start; /* aligns button with right-aligned text */
+    margin-top: 30px;
+    width: 250px;
+    height: 75px;
+}
+
+/*--------------------------------------------------*/
+
+/* ImageSect Stuff */
+.imageSect {
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('images/bannerImg.png');
+    background-size: cover;      /* fill the banner */
+    background-position: center; /* center the image */
+    background-repeat: no-repeat;
+    text-align: center;
+    background-size: cover;
+    height: auto;
+    width: 100%;
+    text-align: center;
+    padding: 5em 0em 5em 0em;
+    margin-bottom: 2em;
+    align-items: center;
+}
+
+
+.imageSect h1 {
+    font-size: 4em;
+    font-weight: .1px;
+    font-size: 76px;
+    margin: auto;
+    width: 1000px;
+    color: rgb(76, 155, 88);
+    margin-top: -50px;
+}
+
+.imageSect p {
+    margin: auto;
+    width: 900px;
+    font-size: 1.7em;
+    color: #fffceb;
+}
+/*--------------------------------------------------*/
+
+
+/* On-Page Button Effect */
+.glowing-button {
+    margin: 35px 1px 30px; /* spacing between links */
+    padding: 10px 20px;
+    font-size: 20px;
+    width: auto;
+    height: auto;
+    border: none;
+    border-width: .5px;
+    outline: none;
+    color: #111;
+    background: #fff;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glowing-button:before {
+    content: '';
+    background: linear-gradient(45deg, rgb(76, 155, 88), rgb(63, 129, 73), rgb(76, 155, 88), rgb(63, 129, 73), rgb(76, 155, 88));
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+    opacity: 1;
+}
+/*--------------------------------------------------*/
+
+
+/* Button Glow Effect */
+.glow-on-hover {
+    margin: 35px 1px 30px; /* spacing between links */
+    padding: 10px 20px;
+    font-size: 20px;
+    width: auto;
+    height: auto;
+    border: none;
+    border-width: .5px;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover img {
+    height: 60px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, rgb(76, 155, 88), rgb(63, 129, 73), rgb(76, 155, 88), rgb(63, 129, 73), rgb(76, 155, 88));
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000;
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+    
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+/*--------------------------------------------------*/
+
+
+/*Text Animation*/
+.animdiv {
+    display:inline-block;
+    overflow:hidden;
+    white-space:nowrap;
+}
+
+.animdiv:first-of-type {
+    animation: showup 7s forwards;
+}
+
+.animdiv:last-of-type {
+    width: 0px;
+    animation: reveal 7s forwards;
+}
+
+div:last-of-type span {
+    color: rgb(76, 155, 88);
+    font-size: 2em;
+    text-decoration: none;
+    padding-bottom: 100px;
+    animation: slidein 7s forwards;
+}
+
+@keyframes showup {
+    0% {opacity:0;}
+    20% {opacity:1;}
+    80% {opacity:1;}
+    100% {opacity:1;}
+}
+
+@keyframes slidein {
+    0% { margin-left:-800px; }
+    20% { margin-left:-800px; }
+    35% { margin-left:-145px; }
+    100% { margin-left:-145px; }
+}
+
+@keyframes reveal {
+    0% {opacity:0;width:0px;}
+    20% {opacity:1;width:0px;}
+    30% {width:355px;}
+    80% {opacity:1;}
+    100% {opacity:1;width:355px;}
+}
+
+
+p {
+    font-size:12px;
+    color:#999;
+    margin-top:200px;
+}
+/*--------------------------------------------------*/
+
+
+/* OverUnderline Text */
+.overunderline {
+    font-size: 3.3em;
+    color: #fffceb;
+    margin-bottom: 1em;
+    text-align: left;
+    position: relative;
+    display: inline-block;
+}
+
+.overunderline::after,
+.overunderline::before {
+    content: '';
+    position: absolute;
+    width: 95%;
+    height: 2px;
+    background: linear-gradient(to right, rgb(76, 155, 88), rgb(63, 129, 73));
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 3s ease-out;
+    transition-delay: .5s;
+}
+
+.overunderline::after {
+    bottom: -5px;
+    transform-origin: right;
+}
+
+.overunderline::before {
+    top: -5px;
+    transform-origin: left;
+}
+
+.overunderline.is-visible::after,
+.overunderline.is-visible::before {
+    transform: scaleX(1);
+}
+/*--------------------------------------------------*/
+
+/*Glowing Outline*/
+.block {
+    margin: 35px 1px 30px;
+    padding: 10px 20px;
+    font-size: 20px;
+    width: auto;
+    height: auto;
+    border: none;
+    border-width: .5px;
+    outline: none;
+    color: #111;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.block:before {
+    content: '';
+	background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, 
+		#0000ff, #00ff00,#ffff00, #ff0000);    
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: steam 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+    opacity: 1;
+}
+
+@keyframes steam {
+	0% {
+		background-position: 0 0;
+	}
+	50% {
+		background-position: 400% 0;
+	}
+	100% {
+		background-position: 0 0;
+	}
+}
+
+.block:after {
+	filter: blur(50px);
+}
+/*--------------------------------------------------*/
+
+.fadeIn {
+    opacity: 0;
+}
+
+.fadeIn.is-visible {
+    animation: fadeInAnimation 3s ease forwards;
+    animation-delay: 1s;
+}
+
+@keyframes fadeInAnimation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+/* --- RESPONSIVE OVERRIDES --- */
+
+/* 1. Small Laptops & Large Tablets (up to 1024px) */
+@media screen and (max-width: 1024px) {
+    .imageSect h1, .blackSect h1 {
+        width: 90%; /* Scale down from fixed 1000px */
+        font-size: 3.0em;
+    }
+
+    .navbar {
+        margin-top:30px; 
+        margin-bottom: 175px; 
+    }
+    
+    .cardLeft, .cardRight {
+        width:100%;
+        flex-direction: column; /* Stack image and text vertically */
+        align-items: center;
+    }
+
+    .cardLeft .cardTextArea, .cardRight .cardTextArea, 
+    .cardLeft img, .cardRight img {
+        width: 60%;
+        text-align: center;
+    }
+
+    .cardRight h1 { text-align: center; }
+    
+    .offerBar {
+        flex-wrap: wrap; /* Allow items to wrap to next line */
+    }
+
+    .offerItem, .reviewItem {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    .footerSect {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .footerTitleTile, .footerTile, #googleMap2 {
+        width: 100%;
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    .offerBar {
+        margin-bottom: 50px;
+    }
+    
+    .offerItem h1 {
+        text-align: center;
+    }
+
+    .mapTextArea h1 {
+        font-size: 2.3em;
+    }
+    
+    .blackSect .overunderline {
+        font-size: 2.5em;
+    }
+
+    .footerSect {
+        padding-top: 2em;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .footerTitleTile, .footerTile {
+        width: 20%;
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .footer {
+        height: auto;
+        width: 100%;
+        padding: 2em 0;
+    }
+
+    .imageSect .green-button {
+        margin: 50px auto 0px auto;
+    }
+}
+
+/* 2. Medium Screens / Standard Laptops (1025px to 1440px) */
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+    .imageSect h1 { width: 800px; font-size: 4em; }
+    .imageSect p { width: 40%; }
+    .offerItem { width: 280px; }
+    .navbar { margin-top:0px; margin-bottom: 100px}
+    .reviewItem { margin-top: 20px; margin-left: 10px; margin-right: 10px;}
+    .mapTextArea h1 { font-size: 40px}
+
+    .cardLeft, .cardRight img {
+        height: 500px;
+    }
+
+    .cardLeft .cardTextArea {
+        height: 800px
+    }
+
+    .cardLeft {
+        margin-bottom: 150px;
+    }
+
+    .blackSect h2 {
+        margin-right: 30px;
+    }
+
+    .blackHeader .navbar {
+        margin: 50px 0px 125px 0px
+    }
+}
+
+/* 3. Large Screens / 1080p Desktops (1441px to 1920px) */
+@media screen and (min-width: 1441px) and (max-width: 1920px) {
+    /* Your current styles mostly target this range */
+    .header {font-size: 20px}
+    .navbar { margin-top:0px; margin-bottom: 100px}
+    .imageSect h1 { width: 1000px; }
+    .cardleft, .cardright h1, p {
+        transform: scale(1.1); /* Scale buttons up for 4K */
+    }
+    .mapTextArea p {
+        margin-left: 40px;
+    }
+}
+
+/* 4. Ultra-Large Screens / 4K Monitors (Above 1920px) */
+@media screen and (min-width: 1921px) {
+    body {
+        font-size: 16px; /* Increase base font size for readability */
+    }
+
+    .header {
+        font-size: 25px
+    }
+
+    .navbar {
+        margin-top: 0px;
+        margin-bottom: 100px;
+    }
+
+    .span {
+        width: auto;
+    }
+
+    .glow-on-hover, .glowing-button {
+        font-size: 30px;
+    }
+
+    .imageSect h1 {
+        font-size: 5em;
+        width: 1400px;
+    }
+
+    .imageSect p {
+        font-size: 2.5em;
+        width: 1200px;
+    }
+
+    .offerItem {
+        width: 450px;
+        padding: 40px;
+    }
+    
+    .green-button {
+        transform: scale(1.2); /* Scale buttons up for 4K */
+        padding: 10px;
+    }
+
+    .bannerSect{
+        background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('images/bannerImgLarge.png');
+    }
+
+    .reviewItem {
+        width: 30%
+    }
+
+    .reviewItem p {
+        font-size: 1.8em
+    }
+
+    .footer h1{
+        font-size: 3em
+    }
+
+    .footer p{
+        font-size: 1.5em
+    }
+
+    .navbar .green-button {
+        margin-left: 15px
+    }
 }
