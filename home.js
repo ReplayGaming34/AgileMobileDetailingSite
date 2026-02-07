@@ -1,4 +1,7 @@
-/* ---------------- Page Startup Wrapper ---------------- */
+/* ---------------- Prevent Double Init ---------------- */
+let mapsInitialized = false;
+
+/* ---------------- Page Startup ---------------- */
 function startPage() {
     /* ---------------- Scroll Animations ---------------- */
     const elements = document.querySelectorAll(".overunderline, .fadeIn");
@@ -17,19 +20,18 @@ function startPage() {
 
     elements.forEach(el => observer.observe(el));
 
-    /* ---------------- Google Maps Init ---------------- */
-    waitForGoogleMaps();
+    waitForGoogleMaps(true);
 }
 
-/* ---------------- Wait For Maps API ---------------- */
-function waitForGoogleMaps() {
+/* ---------------- Wait For Google Maps ---------------- */
+function waitForGoogleMaps(forceReload = false) {
     if (window.google && window.google.maps) {
-        initGoogleMap();
+        initGoogleMap(forceReload);
     } else {
         const interval = setInterval(() => {
             if (window.google && window.google.maps) {
                 clearInterval(interval);
-                initGoogleMap();
+                initGoogleMap(forceReload);
             }
         }, 100);
     }
@@ -38,20 +40,26 @@ function waitForGoogleMaps() {
 /* ---------------- Normal Page Load ---------------- */
 document.addEventListener("DOMContentLoaded", startPage);
 
-/* ---------------- Back/Forward Cache Restore ---------------- */
-window.addEventListener("pageshow", (event) => {
-    if (event.persisted) {
-        waitForGoogleMaps();
-    }
+/* ---------------- Back / Forward Navigation ---------------- */
+window.addEventListener("pageshow", () => {
+    // ALWAYS rebuild maps when returning to page
+    mapsInitialized = false;
+    waitForGoogleMaps(true);
 });
 
 /* ---------------- Google Maps Initialization ---------------- */
-function initGoogleMap() {
+function initGoogleMap(forceReload = false) {
+    if (mapsInitialized && !forceReload) return;
+    mapsInitialized = true;
+
     const location1 = { lat: 40.23824376520867, lng: -76.96432439540757 };
 
     /* -------- Main Map -------- */
     const mapDiv1 = document.getElementById("googleMap");
     if (mapDiv1) {
+        // 🔥 CRITICAL FIX: clear old cached map DOM
+        mapDiv1.innerHTML = "";
+
         const map1 = new google.maps.Map(mapDiv1, {
             zoom: 12,
             center: location1,
@@ -67,6 +75,9 @@ function initGoogleMap() {
     /* -------- Footer Map -------- */
     const mapDiv2 = document.getElementById("googleMap2");
     if (mapDiv2) {
+        // 🔥 CRITICAL FIX: clear old cached map DOM
+        mapDiv2.innerHTML = "";
+
         const map2 = new google.maps.Map(mapDiv2, {
             zoom: 12,
             center: location1,
