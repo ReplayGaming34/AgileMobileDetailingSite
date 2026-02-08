@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="home.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        if (window.innerWidth <= 768) {
+            window.location = "mobileHome.html";
+        }
+    </script>
+</head>
+<body style="background-color: beige;">
+
+<div class="lightSect">
+    <h1 style="margin-top:0px; margin-bottom:0px">Get a Quote</h1>
+
+    <div class="quoteForm">
+        <!-- Add id="quoteForm" for JS -->
+        <form id="quoteForm">
+            <!-- Name Section -->
+            <div class="quoteFormSection twoColumns">
+                <div class="formGroup">
+                    <label for="firstName">First</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+                <div class="formGroup">
+                    <label for="lastName">Last</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+            </div>
+
+            <!-- Email & Phone -->
+            <div class="quoteFormSection twoColumns">
+                <div class="formGroup">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="formGroup">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+            </div>
+
+            <!-- Vehicle Info -->
+            <div class="quoteFormSection">
+                <label for="vehicle">Make and Model of Your Vehicle</label>
+                <input type="text" id="vehicle" name="vehicle" required>
+            </div>
+
+            <!-- Type of Detail -->
+            <div class="quoteFormSection twoColumns">
+                <div class="formGroup">
+                    <label>Type of Detail</label>
+                    <div class="radioGroup">
+                        <label><input type="radio" name="detailType" value="Premium Interior" required> Premium Interior</label>
+                        <label><input type="radio" name="detailType" value="Wash, Clay, & Seal"> Wash, Clay, & Seal</label>
+                        <label><input type="radio" name="detailType" value="Full Detail"> Full Detail</label>
+                    </div>
+                </div>
+
+                <!-- Additional Services -->
+                <div class="formGroup">
+                    <label>Additional Services (Check All That Apply)</label>
+                    <div class="checkboxGroup">
+                        <label><input type="checkbox" name="services[]" value="Headlight Restoration"> Headlight Restoration</label>
+                        <label><input type="checkbox" name="services[]" value="Oxidation Removal"> Oxidation Removal</label>
+                        <label><input type="checkbox" name="services[]" value="Wet Sanding + Polishing"> Wet Sanding + Polishing</label>
+                        <label><input type="checkbox" name="services[]" value="Clear Coat Application"> Clear Coat Application</label>
+                        <label><input type="checkbox" name="services[]" value="Ceramic Coating"> Ceramic Coating</label>
+                        <label><input type="checkbox" name="services[]" value="Paint Enhancement"> Paint Enhancement</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Message -->
+            <div class="quoteFormSection">
+                <label for="message">Message/Requests</label>
+                <textarea id="message" name="message" maxlength="600"></textarea>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+
+<script>
+document.getElementById("quoteForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    let formData = new FormData(this);
+
+    fetch('submit_quote.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())  // parse JSON
+    .then(data => {
+        // Show combined message
+        alert(`${data.email}\n${data.sms}`);
+    })
+    .catch(error => alert('Error: ' + error));
+});
+</script>
+
+</body>
+</html>
