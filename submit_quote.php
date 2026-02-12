@@ -1,49 +1,34 @@
 <?php
-// Turn off PHP warnings/notices so they don't break JSON output
-error_reporting(0);
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-header('Content-Type: application/json');
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+$mail = new PHPMailer(true);
 
-    // Get form data safely
-    $firstName = $_POST['firstName'] ?? '';
-    $lastName = $_POST['lastName'] ?? '';
-    $email = $_POST['email'] ?? '';
-    $phone = $_POST['phone'] ?? '';
-    $vehicle = $_POST['vehicle'] ?? '';
-    $detailType = $_POST['detailType'] ?? '';
-    $services = isset($_POST['services']) ? implode(", ", $_POST['services']) : 'None';
-    $message = $_POST['message'] ?? '';
+try {
+    $mail->isSMTP();
+    $mail->Host = 'smtp-relay.brevo.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'YOUR_BREVO_LOGIN';
+    $mail->Password = 'YOUR_BREVO_SMTP_KEY';
+    $mail->SMTPSecure = 'tls';
+    $mail->Port = 587;
 
-    $body = "Name: $firstName $lastName\n";
-    $body .= "Email: $email\n";
-    $body .= "Phone: $phone\n";
-    $body .= "Vehicle: $vehicle\n";
-    $body .= "Detail Type: $detailType\n";
-    $body .= "Additional Services: $services\n";
-    $body .= "Message: $message\n";
+    $mail->setFrom('noreply@yoursite.com', 'Quote Form');
+    $mail->addAddress('replaygaming34@gmail.com');
 
-    $response = [];
+    $mail->Subject = $subject;
+    $mail->Body = $body;
 
-    // Email
-    $to = "replaygaming34@gmail.com"; // replace with your email
-    $subject = "New Quote Request from $firstName $lastName";
-    $headers = "From: $email";
-
-    $response['email'] = mail($to, $subject, $body, $headers) ? "Email sent successfully." : "Failed to send email.";
-
-    // SMS (replace with your number and carrier)
-    $smsTo = "7177566183@vtxt.net";
-    $response['sms'] = mail($smsTo, "Quote Request", $body) ? "SMS sent successfully." : "Failed to send SMS.";
-
-    // Return JSON
-    echo json_encode($response);
-
-} else {
-    http_response_code(405);
-    echo json_encode(['error' => 'Method not allowed']);
+    $mail->send();
+    $response['email'] = "Email sent successfully.";
+} catch (Exception $e) {
+    $response['email'] = "Mailer Error: " . $mail->ErrorInfo;
 }
+
 ?>
 
 
