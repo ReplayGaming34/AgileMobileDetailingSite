@@ -111,7 +111,7 @@ document.getElementById("quoteForm").addEventListener("submit", function(e){
     e.preventDefault();
     let formData = new FormData(this);
 
-    fetch('submit_quote.php', {
+    fetch('/submit_quote.php', {
         method: 'POST',
         body: formData
     })
